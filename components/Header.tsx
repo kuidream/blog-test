@@ -23,7 +23,7 @@ export default function Header() {
           <span className="text-xl font-semibold">Future Tech</span>
         </div>
         
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -31,13 +31,17 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={`
-                  px-4 py-2 rounded-lg transition-all
+                  transition-all text-lg leading-[27px]
                   ${
                     isActive
-                      ? "bg-primary-dark-gray text-white font-bold border border-gray-500 shadow-sm"
-                      : "text-gray-400 font-normal"
+                      ? "bg-[#141414] text-white font-medium px-[24px] py-[14px] rounded-[10px] border border-[#333333]"
+                      : "text-[#7E7E81] font-normal px-[20px] py-[14px]"
                   }
                 `}
+                style={{
+                  fontFamily: isActive ? 'Inter' : 'Inter',
+                  fontWeight: isActive ? 500 : 400,
+                }}
               >
                 {item.label}
               </Link>
