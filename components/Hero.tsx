@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-[#1A1A1A] border-b border-[#262626]">
+    <section className="w-full bg-[#1A1A1A] border-b border-[#262626] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="w-full flex min-h-[600px]">
           {/* 左侧文字内容区域 */}
@@ -27,7 +27,10 @@ export default function Hero() {
             </div>
 
             {/* 统计数据表格 */}
-            <div className="grid grid-cols-3 border-t border-[#262626] bg-[#1A1A1A]">
+            <div className="relative grid grid-cols-3 border-t border-[#262626] bg-[#1A1A1A]">
+              {/* 顶部延伸线 */}
+              <div className="absolute top-[-1px] right-full w-screen h-[1px] bg-[#262626]"></div>
+              
               {/* 第一个数据点 */}
               <div className="px-8 py-6 border-r border-[#262626]">
                 <div className="flex items-center mb-1">
